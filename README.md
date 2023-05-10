@@ -6,6 +6,9 @@ We also trained other neural network on the dataset in order to compare their pe
 ## Data Preparation
 We downloaded the dataset from Kaggle: https://www.kaggle.com/datasets/paultimothymooney/blood-cells
 
+Here is the plot of distribution of blood cells of 4 target classes for train and test sets, which is very balanced.
+![distributions](https://github.com/SiyaoChen103/NNI-on-BCCD-Dataset/blob/main/data_distribution.png?raw=true)
+
 ## Environment setup
 In Google Colab
 ```
@@ -39,6 +42,7 @@ The result means that the following parameters inside the model are selected in 
 ## Evaluate Chosen Model
 We rebuilt the model with the selected architecture, and performed training and evaluating the model. The source code is stored in the NNI_model folder. 
 We ran for 50 epochs, and the final test accuracy for the model was 0.4910.
+![nni_acc](https://github.com/SiyaoChen103/NNI-on-BCCD-Dataset/blob/main/nni_model_acc.png?raw=true)
 
 ## ResNet50 Model on BCCD Dataset
 We also applied ResNet50 Model on the same dataset to compare the accuracy results. 
