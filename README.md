@@ -15,9 +15,28 @@ We downloaded the dataset from Kaggle: https://www.kaggle.com/datasets/paultimot
 ## NNI implementation
 Tutorial on NNI documentation: https://nni.readthedocs.io/en/stable/nas/exploration_strategy.html
 
-![Policy_image](https://github.com/SiyaoChen103/NNI-on-BCCD-Dataset/blob/main/RL-image2.jpg?raw=true)
+## Search Space
+We used simple search space, focusing on following convolutional layers:
+```
+        self.conv1 = nn.LayerChoice([nn.Conv2d(3, 6, 3, padding=1), nn.Conv2d(3, 6, 5, padding=2)])
+        self.conv2 = nn.LayerChoice([nn.Conv2d(6, 16, 3, padding=1), nn.Conv2d(6, 16, 5, padding=2)])
+        self.skipconnect = nn.InputChoice(n_candidates=2)
+```
 
 ## Exported Structure
+![exported](https://github.com/SiyaoChen103/NNI-on-BCCD-Dataset/blob/main/exported.png?raw=true)
+
+The result means that the following parameters inside the model are selected in the following three selections:
+```
+  #self.conv1 = nn.Conv2d(3, 6, 5, padding=2)
+  #self.conv2 =nn.Conv2d(6, 16, 3, padding=1）
+  #self.skipconnect = [0] (Skip connections are not used)
+```
+## Evaluate Chosen Model
+We rebuilt the model with the selected architecture, and performed training and evaluating the model. The source code is stored in the NNI_model folder. 
+We ran for 50 epochs, and the final test accuracy for the model was 0.4910.
+
+
 
 
 
