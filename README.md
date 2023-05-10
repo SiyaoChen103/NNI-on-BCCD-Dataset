@@ -7,6 +7,7 @@ We also trained other neural network on the dataset in order to compare their pe
 We downloaded the dataset from Kaggle: https://www.kaggle.com/datasets/paultimothymooney/blood-cells
 
 Here is the plot of distribution of blood cells of 4 target classes for train and test sets, which is very balanced.
+
 ![distributions](https://github.com/SiyaoChen103/NNI-on-BCCD-Dataset/blob/main/data_distribution.png?raw=true)
 
 ## Environment setup
@@ -26,7 +27,8 @@ We build a basic CNN model, and used simple search space focusing on following c
 ## NNI implementation
 Tutorial on NNI documentation: https://nni.readthedocs.io/en/stable/nas/exploration_strategy.html
 
-Image below displays part of the training process
+The image below displays part of the training process
+
 ![exported](https://github.com/SiyaoChen103/NNI-on-BCCD-Dataset/blob/main/nni_process.png?raw=true)
 
 
@@ -42,13 +44,33 @@ The result means that the following parameters inside the model are selected in 
 ## Evaluate Chosen Model
 We rebuilt the model with the selected architecture, and performed training and evaluating the model. The source code is stored in the NNI_model folder. 
 We ran for 50 epochs, and the final test accuracy for the model was 0.4910.
+
 ![nni_acc](https://github.com/SiyaoChen103/NNI-on-BCCD-Dataset/blob/main/nni_model_acc.png?raw=true)
 
 ## ResNet50 Model on BCCD Dataset
-We also applied ResNet50 Model on the same dataset to compare the accuracy results. 
+We also applied ResNet50 Model on the same dataset to compare the accuracy results, referencing a sample code on Kaggle. 
 The source code of this section is stored in the ResNet50 folder.
 
+The test accuracy of the ResNet50 model was 0.6238, which is higher than the model selected by nni.
 
+Below is a classfication report generated.
+
+![resnet50_acc](https://github.com/SiyaoChen103/NNI-on-BCCD-Dataset/blob/main/ResNet50_acc.png?raw=true)
+
+## Observation
+ResNet50 has much better performance than the model selected by NNI Dartstrainer. 
+
+However, we did not define a broad search space for the CNN used in neural architecture search as we kept encountering technical difficulties, and the basic CNN structure was simple, whereras the ResNet50 model was a more complicated architecture with stacking of residual blocks.
+So it was not too surprising that the selected model did not have a better performance than the ResNet50 model.
+
+## Acknowledgements
+dataset: https://www.kaggle.com/code/st1ckman/cnn-blood-cells
+
+nni documentation: https://nni.readthedocs.io/en/stable/
+
+nni dartstrainer: https://nni.readthedocs.io/en/stable/deprecated/oneshot_legacy.html
+
+resnet50 sample: https://www.kaggle.com/code/siddhantojha17/blood-cell-classification-using-resnet50
 
 
 
