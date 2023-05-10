@@ -68,7 +68,9 @@ dataset: https://www.kaggle.com/code/st1ckman/cnn-blood-cells
 
 nni documentation: https://nni.readthedocs.io/en/stable/
 
-nni dartstrainer: https://nni.readthedocs.io/en/stable/deprecated/oneshot_legacy.html
+nni DartsTrainer Sourcecode: https://github.com/microsoft/nni/blob/master/nni/retiarii/oneshot/pytorch/darts.py
+
+nni DartsTrainer sample: https://nni.readthedocs.io/en/stable/deprecated/oneshot_legacy.html
 
 resnet50 sample: https://www.kaggle.com/code/siddhantojha17/blood-cell-classification-using-resnet50
 
