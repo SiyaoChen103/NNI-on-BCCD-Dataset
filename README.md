@@ -1,7 +1,7 @@
 # NNI-on-BCCD-Dataset
 Neural Network Intelligence on Blood Cell Images Classification.
-We learned to apply NNI on the BCCD dataset and use neural architecture serach to find an optimal neural network for classificatio the images into 4 blood cell types.
-We also trained other neural network on the dataset in order to compare their performances with the optimal model picked by NNI.
+We learned to apply NNI on the BCCD dataset and use neural architecture search to find an optimal neural network for classificating the images into 4 blood cell types.
+We also trained other neural network(ResNet50) on the dataset in order to compare their performances with the optimal model picked by NNI.
 
 ## Data Preparation
 We downloaded the dataset from Kaggle: https://www.kaggle.com/datasets/paultimothymooney/blood-cells
